@@ -10,6 +10,7 @@
 		echo $msg;
 		file_put_contents($logfile, $msg, FILE_APPEND);
 	}
+
 	function rm_rf($dir) {
 		global $backup_dir;
 		if ($dir[strlen($dir)-1] != '/') {
@@ -40,18 +41,28 @@
 		return true;
 	}
 	
-	
+	#### configuration ####
 	date_default_timezone_set('Europe/Bucharest');
 	
 	$sql_host='localhost';
 	$sql_user='dbdump';
-	$sql_passwd='L0rizel';
+	$sql_passwd='MYDBDUMP_PASS';
+
+	#### where to put the backup scripts ####
 	$backup_dir='/home/sqlbackup';
+
+	#### what directories to exclude from backup ####
 	$exclude_dbs=array('mysql','information_schema','muci');
+	
 	$include_dbs=array();
+	
+	#### where to put the log ####
 	$logfile='sql_backup.log';
 	
+	#### how many days to keep the logs before erasing them ####
 	$keep_max_days = 2;
+	
+	#### linux paths to mysqldump and tar ####
 	$mysqldump='/usr/bin/mysqldump';
 	$tar = '/bin/tar cvf';
 	
