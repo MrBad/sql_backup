@@ -1,16 +1,20 @@
 <?php
+
+### the grant syntax for dbdump user 
 /**
  * 	GRANT SELECT ,
 	SHOW DATABASES ,
 	LOCK TABLES ON * . * 
 	TO 'dbdump'@'localhost' identified by 'dbdump';
-*/
+ */
+	### some logging ###
 	function logerror($msg) {
 		global $logfile;
 		echo $msg;
 		file_put_contents($logfile, $msg, FILE_APPEND);
 	}
 
+	### recursive removing a dir - just like rm -rf ###
 	function rm_rf($dir) {
 		global $backup_dir;
 		if ($dir[strlen($dir)-1] != '/') {
@@ -41,7 +45,7 @@
 		return true;
 	}
 	
-	#### configuration ####
+	#### configurationis ####
 	date_default_timezone_set('Europe/Bucharest');
 	
 	$sql_host='localhost';
