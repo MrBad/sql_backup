@@ -4,3 +4,7 @@ My sql non-incremental backup script
 	and put a line like this into crontab
 		### backup the sql database ###
 		12 03 * * *  /usr/bin/php /root/sql_backup.php
+
+		and on other server just rsync the dir from other cron
+
+
