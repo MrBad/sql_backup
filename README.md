@@ -11,4 +11,4 @@ My sql non-incremental backup script
 
 		and on other server just rsync the dir from other cron
 
-
+		why not gziping the tar archive - induce load, but you can use tar -czvf / tar -cjvf, etc
