@@ -1,7 +1,7 @@
 # sql_backup
 My sql non-incremental backup script
 	
-	just setup to exlude the unwanted db's
+	just edit to exclude the unwanted db's
 	
 	and put a line like this into crontab
 		
